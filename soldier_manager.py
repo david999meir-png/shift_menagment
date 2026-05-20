@@ -15,3 +15,16 @@ def add_soldier(soldier_id: int, soldier_name: str) -> None |ValueError:
                  "duties": []
                  }
     data.soldiers.append(data_dict)
+
+
+def remove_soldier(soldier_id: int) -> None | KeyError:
+    """remove the soldier's dict from the data,
+      if the id doesn't found, a value error will raise"""
+    
+    soldier_for_remove = utils.find_soldier_by_id(soldier_id)
+    
+    if soldier_for_remove is None:
+        raise KeyError("soldier id doesn't found.")
+    
+    data.soldiers.remove(soldier_for_remove)
+    
