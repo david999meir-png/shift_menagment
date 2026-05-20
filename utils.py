@@ -31,7 +31,8 @@ def find_soldier_by_id(soldier_id: int) -> None | dict:
     for soldier in data.soldiers:
         if soldier["soldier_id"] == soldier_id:
             return soldier
-    
+
+
 def find_duty_by_name(soldier: dict, duty_name: str) -> None | dict:
     """looking up for a spacific duty in all the duties,
       ahd returh a dict of the duty for updating it """
@@ -41,4 +42,10 @@ def find_duty_by_name(soldier: dict, duty_name: str) -> None | dict:
         duty: dict
         if duty["name"].lower() == duty_name.lower():
             return duty
-    
+
+
+def is_valid_status(status: str) -> bool:
+    """only the statuses in the list can be updated"""
+
+    status_options = ["pending", "completed", "missed"]
+    return status.lower() in status_options
