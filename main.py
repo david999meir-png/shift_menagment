@@ -5,4 +5,8 @@ def show_menu() -> None:
     print("2. duties menager")
     print("3. EXIT")
     print("====================")
-    
+
+
+def get_user_choice() -> str | int:
+    choice = input("enter your choice:\n")
+    return choice
