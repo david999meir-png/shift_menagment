@@ -27,4 +27,9 @@ def remove_soldier(soldier_id: int) -> None | KeyError:
         raise KeyError("soldier id doesn't found.")
     
     data.soldiers.remove(soldier_for_remove)
-    
+
+
+def get_all_soldiers():
+    """present list of all the soldiers dictionary"""
+
+    return data.soldiers
