@@ -21,3 +21,23 @@ def add_duty_to_soldier(soldier_id: int, duty_name: str, day: str)\
     new_duty = {"name": duty_name, "day": day, "status": "pending"}
     soldier_data["duties"].append(new_duty)
     return
+
+
+def update_duty_status(soldier_id: int, duty_name: str, new_status: str) -> None:
+        """the runc run test for checking the new status,
+          it maigh raise errors if the status is wrong"""
+        
+        soldier_data = find_soldier_by_id(soldier_id)
+        duty_data = find_duty_by_name(soldier_data, duty_name)
+        
+        if not soldier_data:
+            raise KeyError(f"soldier id: {soldier_id} doesn't found.")
+        
+        if not duty_data:
+             raise KeyError(f"duty {duty_name} doesn't found in soldier id {soldier_id}")
+
+        if not is_valid_status(new_status):
+             raise ValueError(f"invalid status - {new_status}")
+        
+        duty_data["status"] = new_status
+        return
