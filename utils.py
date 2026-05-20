@@ -24,7 +24,7 @@ def is_valid_day(day: str) -> bool:
     return day.lower() in valid_days
 
 
-def find_soldier_by_id(soldier_id: int) -> None | dict:
+def find_soldier_by_id(soldier_id: str) -> None | dict:
     """looking up for soldier in all the dict data,
       if the soldier alrady inside, return dict with the ditails of the soldier """
     

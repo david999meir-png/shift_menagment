@@ -2,7 +2,7 @@ import utils
 import data
 
 
-def add_soldier(soldier_id: int, soldier_name: str) -> None |ValueError:
+def add_soldier(soldier_id: str, soldier_name: str) -> None |ValueError:
     """calls other function for check validilation and creates a new dict in data"""
 
     if utils.find_soldier_by_id(soldier_id):
@@ -17,7 +17,7 @@ def add_soldier(soldier_id: int, soldier_name: str) -> None |ValueError:
     data.soldiers.append(data_dict)
 
 
-def remove_soldier(soldier_id: int) -> None | KeyError:
+def remove_soldier(soldier_id: str) -> None | KeyError:
     """remove the soldier's dict from the data,
       if the id doesn't found, a value error will raise"""
     

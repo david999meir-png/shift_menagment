@@ -1,7 +1,7 @@
 from utils import find_duty_by_name, find_soldier_by_id, soldeir_had_duty, is_valid_status, is_valid_day
 
 
-def add_duty_to_soldier(soldier_id: int, duty_name: str, day: str)\
+def add_duty_to_soldier(soldier_id: str, duty_name: str, day: str)\
       -> None | ValueError | KeyError:
     """check the new duty if it rully, the func will run a full sets of tests"""
 
@@ -23,7 +23,7 @@ def add_duty_to_soldier(soldier_id: int, duty_name: str, day: str)\
     return
 
 
-def update_duty_status(soldier_id: int, duty_name: str, new_status: str) -> None:
+def update_duty_status(soldier_id: str, duty_name: str, new_status: str) -> None:
         """the runc run test for checking the new status,
           it maigh raise errors if the status is wrong"""
         
@@ -43,11 +43,11 @@ def update_duty_status(soldier_id: int, duty_name: str, new_status: str) -> None
         return
 
 
-def get_soldier_duties(soldier_id: int) -> list:
+def get_soldier_duties(soldier_id: str) -> list:
     """return the full soldier's duties by dict"""
 
     data_soldier = find_soldier_by_id(soldier_id)
-    
+
     if not data_soldier:
         raise KeyError(f"soldier id: {soldier_id} doesn't found.")
     
