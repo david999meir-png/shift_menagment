@@ -41,3 +41,14 @@ def update_duty_status(soldier_id: int, duty_name: str, new_status: str) -> None
         
         duty_data["status"] = new_status
         return
+
+
+def get_soldier_duties(soldier_id: int) -> list:
+    """return the full soldier's duties by dict"""
+
+    data_soldier = find_soldier_by_id(soldier_id)
+    
+    if not data_soldier:
+        raise KeyError(f"soldier id: {soldier_id} doesn't found.")
+    
+    return data_soldier["duties"]
