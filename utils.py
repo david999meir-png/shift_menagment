@@ -7,10 +7,10 @@ def is_valid_name(name: str) -> bool:
     return bool(name)
 
 
-def soldeir_had_duty(duties: list[dict], duty_name: str) -> bool:
+def soldeir_had_duty(soldier: dict, duty_name: str) -> bool:
     """checking if the duty name olrady exist in duties, duty can't appear more than once"""
 
-    for duty in duties:
+    for duty in soldier["duties"]:
         duty: dict
         if duty["name"] == duty_name:
             return True
