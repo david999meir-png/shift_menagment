@@ -6,10 +6,10 @@ def add_soldier(soldier_id: int, soldier_name: str) -> None |ValueError:
     """calls other function for check validilation and creates a new dict in data"""
 
     if utils.find_soldier_by_id(soldier_id):
-        raise ValueError
+        raise ValueError("soldier alrady exist.")
     
     if not utils.is_valid_name(soldier_name):
-        raise ValueError
+        raise ValueError("empty name, name must be not empty.")
     data_dict = {"id": soldier_id, 
                  "nane": soldier_name,
                  "duties": []
