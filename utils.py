@@ -12,7 +12,7 @@ def soldeir_had_duty(soldier: dict, duty_name: str) -> bool:
 
     for duty in soldier["duties"]:
         duty: dict
-        if duty["name"] == duty_name:
+        if duty["name"].lower() == duty_name.lower():
             return True
     return False
 
