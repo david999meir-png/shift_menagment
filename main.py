@@ -33,3 +33,12 @@ def handle_remove_soldier() -> None:
 
     except KeyError as e:
         print(e)
+
+
+def handle_view_soldiers() -> None:
+    soldiers_data = get_all_soldiers()
+
+    print("-------soldiers:-------\n")
+    for soldier in soldiers_data:
+        print(f'soldier name: {soldier["name"]} | soldier id: {soldier["id"]} | duties: {soldier["duties"]}')
+        print("*" * 50)
