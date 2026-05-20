@@ -1,4 +1,4 @@
-from soldier_manager import add_soldier, get_all_soldiers
+from soldier_manager import add_soldier, get_all_soldiers, remove_soldier
 
 
 def show_menu() -> None:
@@ -19,8 +19,17 @@ def handle_add_soldier() -> None:
     try:
         soldier_id = input("ehter soldier id:\n")
         soldier_name = input("enter soldier name:\n")
-        
+
         add_soldier(soldier_id, soldier_name)
 
     except ValueError as e:
+        print(e)
+
+
+def handle_remove_soldier() -> None:
+    try:
+        soldier_id = input("ehter soldier id:\n")
+        remove_soldier(soldier_id)
+
+    except KeyError as e:
         print(e)
