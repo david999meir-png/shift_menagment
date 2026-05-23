@@ -11,7 +11,7 @@ def add_soldier(soldier_id: str, soldier_name: str) -> None |ValueError:
     if not utils.is_valid_name(soldier_name):
         raise ValueError("empty name, name must be not empty.")
     data_dict = {"id": soldier_id, 
-                 "nane": soldier_name,
+                 "name": soldier_name,
                  "duties": []
                  }
     data.soldiers.append(data_dict)

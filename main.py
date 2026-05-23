@@ -151,3 +151,4 @@ def main() -> None:
         except ValueError as e:
             print(e)
             
+main()
