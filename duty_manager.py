@@ -15,7 +15,7 @@ def add_duty_to_soldier(soldier_id: str, duty_name: str, day: str)\
         raise ValueError(f"invalid - {day} please enter correct day: sunday - thursday only.")
     
 
-    if soldeir_had_duty(duty_name):
+    if soldeir_had_duty(soldier_data ,duty_name):
         raise ValueError(f"invalid - {duty_name}")
     
     new_duty = {"name": duty_name, "day": day, "status": "pending"}
