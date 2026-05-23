@@ -76,7 +76,9 @@ def handle_update_status() -> None:
 def handle_view_soldier_duties() -> None:
     try:
         soldier_id = input("ehter doldier id:\n")
-        get_soldier_duties(soldier_id)
+        duties = get_soldier_duties(soldier_id)
+        for duty in duties:
+            print(f'duty name: {duty["name"]} | duty day: {duty["day"]} | duty status: {duty["status"]}')
     
     except KeyError as e:
         print(e)
