@@ -76,3 +76,21 @@ def handle_view_soldier_duties() -> None:
     
     except KeyError as e:
         print(e)
+
+
+def show_soldiers_menu() -> None:
+    print("====================")
+    print("-----soldiers menu-----")
+    print("1. add soldier")
+    print("2. remove soldier")
+    print("3. show all soldiers")
+
+
+def show_duties_menu() -> None:
+    print("====================")
+    print("-----duties menu-----")
+    print("1. add duty to soldier")
+    print("2. update duty status")
+    print("3. show soldier duties")
+
+
