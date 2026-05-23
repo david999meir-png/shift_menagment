@@ -94,3 +94,58 @@ def show_duties_menu() -> None:
     print("3. show soldier duties")
 
 
+def main() -> None:
+    while True:
+        try:
+            show_menu()
+            choice = get_user_choice()
+            if choice == "1":
+                show_soldiers_menu()
+                inner_choice = get_user_choice()
+
+                if inner_choice == "1":
+                    handle_add_soldier()
+
+                elif inner_choice == "2":
+                    handle_remove_soldier()
+
+                elif inner_choice == "3":
+                    handle_view_soldiers()
+                
+                elif inner_choice == "4":
+                    continue
+
+                else:
+                    raise ValueError("wrong choice, please follow the menu")
+                
+
+            elif choice == "2":
+                show_duties_menu()
+                inner_choice = get_user_choice()
+
+                if inner_choice == "1":
+                    handle_add_duty()
+                
+                elif inner_choice == "2":
+                    handle_update_status()
+                
+                elif inner_choice == "3":
+                    handle_view_soldier_duties()
+                
+                elif inner_choice == "4":
+                    continue
+                
+                else:
+                    raise ValueError("wrong choice, please follow the menu")
+            
+            elif choice == "3":
+                print("good by...")
+                break
+
+            
+            else:
+                raise ValueError("wrong choice, please follow the menu")
+        
+        except ValueError as e:
+            print(e)
+            
