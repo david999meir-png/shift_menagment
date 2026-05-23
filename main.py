@@ -22,6 +22,7 @@ def handle_add_soldier() -> None:
         soldier_name = input("enter soldier name:\n")
 
         add_soldier(soldier_id, soldier_name)
+        print(f'the soldier {soldier_name} added.')
 
     except ValueError as e:
         print(e)
@@ -31,6 +32,7 @@ def handle_remove_soldier() -> None:
     try:
         soldier_id = input("ehter soldier id:\n")
         remove_soldier(soldier_id)
+        print(f'the soldier {soldier_id} deleted.')
 
     except KeyError as e:
         print(e)
@@ -52,6 +54,7 @@ def handle_add_duty() -> None:
         duty_day = input("ehter duty day:\n")
 
         add_duty_to_soldier(soldier_id, duty_name, duty_day)
+        print(f'duty {duty_name} added to {soldier_id}')
 
     except (ValueError, KeyError) as e:
         print(e)
@@ -64,6 +67,7 @@ def handle_update_status() -> None:
         new_status = input("ehter duty's new status")
 
         update_duty_status(soldier_id, duty_name, new_status)
+        print(f'duty {duty_name} updated to {new_status}')
 
     except (ValueError, KeyError) as e:
         print(e)
