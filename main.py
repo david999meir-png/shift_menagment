@@ -84,6 +84,7 @@ def show_soldiers_menu() -> None:
     print("1. add soldier")
     print("2. remove soldier")
     print("3. show all soldiers")
+    print("4. back to the main menu")
 
 
 def show_duties_menu() -> None:
@@ -92,6 +93,7 @@ def show_duties_menu() -> None:
     print("1. add duty to soldier")
     print("2. update duty status")
     print("3. show soldier duties")
+    print("4. back to the main menu")
 
 
 def main() -> None:
