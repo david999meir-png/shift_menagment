@@ -1,5 +1,5 @@
 from soldier_manager import add_soldier, get_all_soldiers, remove_soldier
-from duty_manager import add_duty_to_soldier, update_duty_status
+from duty_manager import add_duty_to_soldier, update_duty_status, get_soldier_duties
 
 
 def show_menu() -> None:
@@ -66,4 +66,13 @@ def handle_update_status() -> None:
         update_duty_status(soldier_id, duty_name, new_status)
 
     except (ValueError, KeyError) as e:
+        print(e)
+
+
+def handle_view_soldier_duties() -> None:
+    try:
+        soldier_id = input("ehter doldier id:\n")
+        get_soldier_duties(soldier_id)
+    
+    except KeyError as e:
         print(e)
