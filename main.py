@@ -1,4 +1,5 @@
 from soldier_manager import add_soldier, get_all_soldiers, remove_soldier
+from duty_manager import add_duty_to_soldier, update_duty_status
 
 
 def show_menu() -> None:
@@ -42,3 +43,16 @@ def handle_view_soldiers() -> None:
     for soldier in soldiers_data:
         print(f'soldier name: {soldier["name"]} | soldier id: {soldier["id"]} | duties: {soldier["duties"]}')
         print("*" * 50)
+
+
+def handle_add_duty() -> None:
+    try:
+        soldier_id = input("ehter doldier id:\n")
+        duty_name = input("enter duty name:\n")
+        duty_day = input("ehter duty day:\n")
+
+        add_duty_to_soldier(soldier_id, duty_name, duty_day)
+
+    except (ValueError, KeyError) as e:
+        print(e)
+
