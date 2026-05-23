@@ -29,7 +29,7 @@ def find_soldier_by_id(soldier_id: str) -> None | dict:
       if the soldier alrady inside, return dict with the ditails of the soldier """
     
     for soldier in data.soldiers:
-        if soldier["soldier_id"] == soldier_id:
+        if soldier["id"] == soldier_id:
             return soldier
 
 
