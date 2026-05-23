@@ -56,3 +56,14 @@ def handle_add_duty() -> None:
     except (ValueError, KeyError) as e:
         print(e)
 
+
+def handle_update_status() -> None:
+    try:
+        soldier_id = input("ehter doldier id:\n")
+        duty_name = input("enter duty name:\n")
+        new_status = input("ehter duty's new status")
+
+        update_duty_status(soldier_id, duty_name, new_status)
+
+    except (ValueError, KeyError) as e:
+        print(e)
