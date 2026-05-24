@@ -102,6 +102,29 @@ def show_duties_menu() -> None:
     print("4. back to the main menu")
 
 
+def soldiers_user_choice_flow(choice):
+    if choice == "1":
+        handle_add_soldier()
+        return True
+    
+    elif choice == "2":
+        handle_remove_soldier()
+        return True
+    
+    elif choice == "3":
+        handle_view_soldiers()
+        return True
+
+    elif choice == "4":
+        return False
+
+    else:
+        raise ValueError("wrong choice, please follow the menu")
+        raise
+
+    
+
+
 def main() -> None:
     while True:
         try:
@@ -126,7 +149,6 @@ def main() -> None:
                 else:
                     raise ValueError("wrong choice, please follow the menu")
                 
-
             elif choice == "2":
                 show_duties_menu()
                 inner_choice = get_user_choice()
@@ -150,7 +172,6 @@ def main() -> None:
                 print("good by...")
                 break
 
-            
             else:
                 raise ValueError("wrong choice, please follow the menu")
         
