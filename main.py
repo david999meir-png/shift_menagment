@@ -102,18 +102,15 @@ def show_duties_menu() -> None:
     print("4. back to the main menu")
 
 
-def soldiers_user_choice_flow(choice):
+def soldiers_user_choice_flow(choice) -> None | str:
     if choice == "1":
         handle_add_soldier()
-        return True
     
     elif choice == "2":
         handle_remove_soldier()
-        return True
     
     elif choice == "3":
         handle_view_soldiers()
-        return True
 
     elif choice == "4":
         return "continue"
@@ -123,7 +120,7 @@ def soldiers_user_choice_flow(choice):
         raise
 
 
-def user_flow_menagement(choice):
+def user_flow_menagement(choice) -> None | str:
     if choice == "1":
         show_soldiers_menu()
         inner_choise = get_user_choice()
@@ -145,18 +142,15 @@ def user_flow_menagement(choice):
         return result
     
 
-def duties_user_choice_flow(choice):
+def duties_user_choice_flow(choice) -> None | str:
     if choice == "1":
         handle_add_duty()
-        return True
     
     elif choice == "2":
         handle_update_status()
-        return True
     
     elif choice == "3":
         handle_view_soldier_duties()
-        return True
 
     elif choice == "4":
         return "continue"
@@ -172,7 +166,7 @@ def main() -> None:
             show_menu()
             choice = get_user_choice()
             flow = user_flow_menagement(choice)
-            
+
             if flow == "continue":
                 continue
             if flow == "break":
