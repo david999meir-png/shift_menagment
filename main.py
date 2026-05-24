@@ -122,6 +122,26 @@ def soldiers_user_choice_flow(choice):
         raise ValueError("wrong choice, please follow the menu")
         raise
 
+
+def duties_user_choice_flow(choice):
+    if choice == "1":
+        handle_add_duty()
+        return True
+    
+    elif choice == "2":
+        handle_update_status()
+        return True
+    
+    elif choice == "3":
+        handle_view_soldier_duties()
+        return True
+
+    elif choice == "4":
+        return False
+
+    else:
+        raise ValueError("wrong choice, please follow the menu")
+        raise
     
 
 
